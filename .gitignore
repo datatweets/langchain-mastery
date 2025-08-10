@@ -133,3 +133,7 @@ temp/
 *.q5_0
 *.q5_1
 *.q8_0
+
+# Solution files for LangChain activities - Keep private for instructors
+*_solution.md
+langchain-activities/*_solution.md
