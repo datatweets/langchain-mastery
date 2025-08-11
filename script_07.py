@@ -6,11 +6,14 @@ from langchain import hub  # pulls a ready-made ReAct prompt from LangChain Hub
 from langchain_community.agent_toolkits.load_tools import load_tools
 from langchain.agents import create_react_agent, AgentExecutor
 
-# 1) Load API key
+# 1) Load API keys
+# Make sure OPENAI_API_KEY and LANGSMITH_API_KEY are set in a .env file or your shell
 load_dotenv()
 api_key = os.getenv("OPENAI_API_KEY")
 os.environ["LANGCHAIN_TRACING_V2"] = "true"
-os.environ["LANGSMITH_API_KEY"] = "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"
+langsmith_key = os.getenv("LANGSMITH_API_KEY")
+if not langsmith_key:
+    print("Warning: LANGSMITH_API_KEY is not set. Set it in your .env file or shell to enable tracing.")
 # 2) LLM (gpt-4o)
 llm = ChatOpenAI(
     model="gpt-4o",
