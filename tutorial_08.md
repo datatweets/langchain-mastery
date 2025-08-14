@@ -53,7 +53,7 @@ Let's examine `script_08.py` step by step:
 ### Step 1: Imports and Setup
 
 ```python
-# rag_pdf_chat_fix.py
+# script_08.py
 import os
 from dotenv import load_dotenv
 
